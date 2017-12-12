@@ -1,0 +1,387 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.common-styles-for-columns {
+  height: 100vh;
+  animation: widen 10s linear 0s infinite;
+  display: flex;
+  justify-content: center;
+}
+.common-styles-for-circles {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.common-styles-for-cloud {
+  animation: visibility 10s ease 0s infinite;
+}
+.common-styles-for-small-circles {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  animation: opacity 10s ease 0s infinite, move-circle 1s ease 0s infinite;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: black;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper .left {
+  height: 100vh;
+  animation: widen 10s linear 0s infinite;
+  display: flex;
+  justify-content: center;
+  background: #D3E2AB;
+  align-items: flex-end;
+}
+.wrapper .left .circle-left {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: move-left 10s ease 0s infinite, background 10s ease 0s infinite;
+}
+.wrapper .left .circle-left svg {
+  width: 70%;
+}
+.wrapper .left .circle-left svg .cloud {
+  animation: visibility 10s ease 0s infinite;
+}
+.wrapper .left .circle-left #arrows {
+  animation: rotate 2s ease 0s infinite;
+  position: absolute;
+  width: 20%;
+}
+.wrapper .left .small-circle-left {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  animation: opacity 10s ease 0s infinite, move-circle 1s ease 0s infinite;
+  left: 0;
+  top: 0;
+}
+.wrapper .right {
+  height: 100vh;
+  animation: widen 10s linear 0s infinite;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #2A778B;
+  align-items: flex-start;
+}
+.wrapper .right .circle-right {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: move-right 10s ease 0s infinite, background 10s ease 0s infinite;
+}
+.wrapper .right .circle-right svg {
+  width: 70%;
+}
+.wrapper .right .circle-right svg .cloud {
+  fill: white;
+  animation: visibility 10s ease 0s infinite;
+}
+.wrapper .right .circle-right .hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 4vh;
+  animation: check 2s steps(100, end) infinite;
+  top: 8.5vh;
+  left: 8vh;
+}
+.wrapper .right .circle-right .hidden #check {
+  width: 4vh;
+}
+.wrapper .right .small-circle-right {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  animation: opacity 10s ease 0s infinite, move-circle 1s ease 0s infinite;
+  right: 0;
+  bottom: 0;
+}
+@keyframes widen {
+  from {
+    width: 0;
+  }
+  10% {
+    width: 50vw;
+  }
+  80% {
+    width: 50vw;
+  }
+  90% {
+    width: 0;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes move-left {
+  from {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(-40vh);
+  }
+  75% {
+    transform: translateY(-40vh);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes move-right {
+  from {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(40vh);
+  }
+  75% {
+    transform: translateY(40vh);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes background {
+  from {
+    background: rgba(255, 255, 255, 0);
+  }
+  10% {
+    background: rgba(255, 255, 255, 0);
+  }
+  11% {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  79% {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  80% {
+    background: rgba(255, 255, 255, 0);
+  }
+  to {
+    background: rgba(255, 255, 255, 0);
+  }
+}
+@keyframes visibility {
+  from {
+    fill-opacity: 0;
+  }
+  10% {
+    fill-opacity: 0;
+  }
+  11% {
+    fill-opacity: 1;
+  }
+  79% {
+    fill-opacity: 1;
+  }
+  80% {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 0;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes check {
+  from {
+    width: 0;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  76% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes move-circle {
+  from {
+    transform: rotate(0deg) translate(-1vh) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-1vh) rotate(-360deg);
+  }
+}
